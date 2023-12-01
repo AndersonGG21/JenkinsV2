@@ -14,7 +14,6 @@ pipeline {
             script {
                 echo "Branch discovered by branch indexing"
                 currentBuild.result = 'SUCCESS'
-                error "Caught branch indexing..."
             }
         }
     }
