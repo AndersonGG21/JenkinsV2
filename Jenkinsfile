@@ -18,5 +18,26 @@ pipeline {
             }
         }
     }
+
+    stage('Build') {
+      steps {
+        echo 'Building'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing'
+      }
+    }
+
+    stage('Deploy') {
+      when {
+           branch 'main'
+      }
+      steps {
+        echo 'Deploying'
+      }
+    }
+
   }
 }
