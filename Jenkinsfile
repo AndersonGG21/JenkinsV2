@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  triggers {
-      pollSCM('*/15 * * * *')
-    }
   stages {
     stage('Branch indexing: abort') {
         when {
@@ -21,27 +18,5 @@ pipeline {
             }
         }
     }
-
-    stage('Build') {
-      steps {
-        echo 'Building'
-      }
-    }
-
-    stage('Test') {
-      steps {
-        echo 'Testing'
-      }
-    }
-
-    stage('Deploy') {
-      when {
-           branch 'main'
-      }
-      steps {
-        echo 'Deploying'
-      }
-    }
-
   }
 }
